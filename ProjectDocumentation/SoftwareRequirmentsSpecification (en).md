@@ -11,10 +11,17 @@
     3.2.1 [Software Quality Attributes](#3.2.1) <br>
       3.2.1.1 [Usability requirements](#3.2.1.1) <br>
       3.2.1.2 [Security requirements](#3.2.1.2) <br>
+	3.2.2 [Limitations](#3.2.2) <br>
  4. [Analogues](#4) <br>
+ 
+ ### Glossary
  
  ### 1. Introduction <a name="1"></a>
 There are a huge number of online stores, but most of them do not guarantee the security of personal information for the user, and many also have a huge number of various "features" that prevent the user from understanding the simplest things. And, of course, it is worth mentioning that the amount of advertising on the Internet is going off scale at the moment. PhoneShop is a web application designed to solve these problems. This project has the basic functions of an online store, and also implements the protection of user data from intruders.
+* Product - a mobile device used in the web application as items of sale.
+* Order - the final document, not subject to editing, which is issued to the user after confirming the data. A copy of this document is stored in the database after payment.
+* Security - requirements for a project to protect user data during its operation.
+* Pagination - sequential enumeration.
 
 ### 2. User Requirements <a name="2"></a>
 #### 2.1. Software Interfaces <a name="2.1"></a>
@@ -34,7 +41,6 @@ The project uses the Java language, as well as the Spring Framework; a MySQL dat
 #### 2.3. User Characteristics <a name="2.3"></a>
 The target audience:
 * Users buying products in the online store.
-* Online store owners.
 
 ### 3. System Requirements <a name="3"></a>
 #### 3.1. Functional Requirements <a name="3.1"></a>
@@ -60,6 +66,8 @@ Important attributes of the application are low resource consumption and high pe
 1. Administrators have access to the database;
 2. During registration and subsequent use, user data is encoded;
 3. After creating an order, you cannot change it.
-
+#### 3.2.2 Limitations <a name="3.2.2"></a>
+* The application is implemented in Java.
+* The application is available for the GoogleChrome browser version no lower than 3.29, for other browsers there are no restrictions.
 ### 4. Analogues <a name="4"></a>
 This project is a simplified version [mobilestore.by](https://mobistore.by/) and [shop.by](https://shop.by/telefony_mobilnye/)
