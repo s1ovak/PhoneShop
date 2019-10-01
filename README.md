@@ -1,5 +1,6 @@
 # PhoneShop
 # TRTPO project
+PhoneShop is a web application for buying and selling mobile devices
 
 # Contents
 1. [Documentation](https://github.com/s1ovak/PhoneShop/tree/master/ProjectDocumentation) <br>
