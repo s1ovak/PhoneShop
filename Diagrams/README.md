@@ -100,19 +100,25 @@
 ### 2. Диаграммы активности<a name="2"></a>
 ##### 2.1 Регистрация<a name="2.1"></a> 
 При заполнении форм данных происходит их валидация. При неверных данных выводится сообщение об ошибке с требованием повторить действие, иначе происходит регистрация нового пользователя и переход на страницу всех продуктов.
- ![Registration activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/Registration.png)
+
+![Registration activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/Registration.png)
 ##### 2.2 Вход в систему<a name="2.2"></a> 
 При заполнении форм данных происходит их валидация. При неверных данных выводится сообщение об ошибке с требованием повторить действие, иначе происходит авторизация и переход на страницу всех продуктов.
- ![Login activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/Login.png)
+
+![Login activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/Login.png)
 ##### 2.3 Просмотр всех продуктов<a name="2.3"></a> 
 Пользователь просматривает продукты. Пользователь имеет возможность использовать поиск и сортировку принажатии соответствующих клавиш и ввода данных для поиска. При нажатии на продукт происходит переход на страницу детальной информации о продукте, при условии, что пользователь авторизован.
- ![Product List activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/ProductList.png)
+
+![Product List activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/ProductList.png)
 ##### 2.4 Просмотр детальной информации о продукте<a name="2.4"></a>
 При нажатии на "Add to cart" происходит добавление продукта с выбранным количеством в корзину. Пользователь имеет возможность редактировать количество.
- ![Product Details activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/ProductDetails.png)
+
+![Product Details activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/ProductDetails.png)
 ##### 2.5 Создание заказа<a name="2.5"></a>
 При нажатии на значок корзины на панели инструментов происходит переход на страницу оформления заказа. Пользователь ввожит данные об оплате. Если неверные данные выводится сообщание об ошибке, иначе при нажатии "Place order" создается заказ.
- ![Place Order activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/PlaceOrder.png)
+
+![Place Order activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/PlaceOrder.png)
 ##### 2.6 Переход на одну из последних страниц продуктов<a name="2.6"></a>
 При нажатии на один из продуктов, изображенных внизу страницы происходит переход на страницу соответствующего продукта.
- ![Last Viewed activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/LastViewed.png) 
+
+![Last Viewed activity](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Activity/LastViewed.png) 
