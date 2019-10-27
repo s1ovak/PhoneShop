@@ -15,7 +15,12 @@
 2.4 [Просмотр детальной информации о продукте](#2.4)<br>
 2.5 [Создание заказа](#2.5)<br>
 2.6 [Переход на одну из последних страниц продуктов](#2.6)<br>
-3. [Диаграмма последовательности](#3)
+3. [Диаграмма последовательности](#3)<br>
+4. [Диаграммы состояния](#4)<br>
+4.1 [Авторизация в систему](#4.1)<br>
+4.2 [Добавление в корзину](#4.2)<br>
+4.3 [Панель инструментов](#4.3)<br>
+4.4 [Создание заказа](#4.4)<br>
 
 ### 1. Диаграмма прецедентов<a name="1"></a>
 Диаграмма прецедентов представляет собой следующую диаграмму:
@@ -129,3 +134,24 @@
 Диаграмма последовательности основных вариантов использования представлена ниже:
 
 ![Sequence Diagram](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Sequence/Sequence.png)
+
+### 4. Диаграммы состояния<a name="4"></a>
+Данные диаграммы были созданы с использованием mockups:
+* Окно регистрации https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Registration.png
+* Окно логина https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Login.png
+* Окно всех продуктов https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/View%20products%20list.png
+* Окно продукта https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/View%20detailed%20product%20.png
+* Окно создания зказа https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Get%20order.png
+
+##### 4.1 Авторизация в систему<a name="4.1"></a>
+
+![Autorization state](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/State/Autorization.png)
+##### 4.2 Добавление в корзину<a name="4.2"></a>
+
+![Add to cart state](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/State/Add%20to%20cart.png)
+##### 4.3 Панель инструментов<a name="4.3"></a>
+
+![Toolbar state](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/State/Toolbar%20actions.png)
+##### 4.4 Создание заказа<a name="4.4"></a>
+
+![Create order state](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/State/Create%20order.png)
