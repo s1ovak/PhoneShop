@@ -141,7 +141,7 @@
 * Окно логина https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Login.png
 * Окно всех продуктов https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/View%20products%20list.png
 * Окно продукта https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/View%20detailed%20product%20.png
-* Окно создания зказа https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Get%20order.png
+* Окно создания заказа https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Get%20order.png
 
 ##### 4.1 Авторизация в систему<a name="4.1"></a>
 
