@@ -145,12 +145,6 @@
 * Окно продукта https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/View%20detailed%20product%20.png
 * Окно создания заказа https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/Mockups/Get%20order.png
 
-Классы-контроллеры в данной диаграмме соответствуют объектам UI на диаграмме последовательности:
-* AuthenticationContoller - Registration/login page
-* CartPageController - Cart page
-* ProductListController - Product list page
-* ProductDetailsController - Product details page
-
 ##### 4.1 Авторизация в систему<a name="4.1"></a>
 
 ![Autorization state](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/State/Autorization.png)
@@ -172,6 +166,12 @@
 * Service level - классы, содержащие в себе всю бизнес логику приложения.
 * Controller level - классы для обработки соответствующих запросов и передачи ответа.
 * Dto level - классы-сущности, которые используются при взаимодействии контроллеров и фронтенда.
+
+Классы-контроллеры в данной диаграмме соответствуют объектам UI на диаграмме последовательности:
+* AuthenticationContoller - Registration/login page
+* CartPageController - Cart page
+* ProductListController - Product list page
+* ProductDetailsController - Product details page
 
 ### 6. Совмещенная диаграмма компонентов и развертывания <a name="6"></a>
 ![Deployment diagram](https://github.com/s1ovak/PhoneShop/blob/master/Diagrams/Component%20%26%20deployment/Component%20deployment%20diagram.png)
