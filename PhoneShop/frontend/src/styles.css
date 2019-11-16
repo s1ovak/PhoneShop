@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import '../node_modules/@angular/cdk/overlay-prebuilt.css';
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+
+  /* Half height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 50%;
+}

@@ -11,14 +11,22 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-redux/router": "^9.0.0",
+    "@angular-redux/store": "^9.0.0",
     "@angular/animations": "~8.2.9",
+    "@angular/cdk": "^7.3.4",
     "@angular/common": "~8.2.9",
     "@angular/compiler": "~8.2.9",
     "@angular/core": "~8.2.9",
     "@angular/forms": "~8.2.9",
+    "@angular/http": "^7.2.8",
+    "@angular/material": "^7.3.4",
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
+    "@auth0/angular-jwt": "^2.1.0",
+    "angular2-jwt": "^0.2.3",
+    "core-js": "^2.6.5",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
@@ -31,7 +39,10 @@
     "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/redux-logger": "^3.0.7",
     "codelyzer": "^5.0.0",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.4",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -42,6 +53,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "uuid": "^3.3.2"
   }
 }
