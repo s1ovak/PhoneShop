@@ -1,0 +1,19 @@
+.edit-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.edit-user-controls {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}

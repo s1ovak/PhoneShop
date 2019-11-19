@@ -1,5 +1,5 @@
 <div class="edit-user">
-  <h2 color="primary">Register</h2>
+  <h2 color="primary">Login</h2>
 
   <form [formGroup]="userForm">
     <mat-form-field>
@@ -12,15 +12,11 @@
       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       <mat-error *ngIf="password.invalid">{{getErrorText('password')}}</mat-error>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email" [formControlName]="'email'" required>
-      <mat-error *ngIf="email.invalid">{{getErrorText('email')}}</mat-error>
-    </mat-form-field>
   </form>
 
   <div class="edit-user-controls">
-    <button class="mat-flat-button" mat-button color="primary" [disabled]="username.invalid || password.invalid || email.invalid" (click)="onRegisterClick()">
-      Register
+    <button class="mat-flat-button" mat-button color="primary" [disabled]="username.invalid || password.invalid " (click)="onLoginClick()">
+      Login
     </button>
     <button class="mat-flat-button" mat-button color="warn" (click)=onCancelClick()>Cancel</button>
   </div>

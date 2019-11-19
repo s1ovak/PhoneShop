@@ -1,34 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {RegisterService} from "../util/service/register.service";
+import {LoginService} from "../util/service/login.service";
+import {User} from "../util/models/user.model";
+import {GlobalUserStorageService} from "../util/service/global-storage.service";
+import {Token} from "../util/models/token.model";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   userForm: FormGroup;
 
   constructor(private fb: FormBuilder, private router: Router, private location: Location,
-              private registerService: RegisterService) { }
+              private loginService: LoginService, private localStorageService: GlobalUserStorageService) {
+  }
 
   ngOnInit() {
     this.initializeForm();
   }
 
-  private initializeForm(){
+  private initializeForm() {
     this.userForm = this.fb.group({
       username: ['', {
         validators: [Validators.required]
       }],
-      password: ['', Validators.required],
-      email: ['', {
-        validators: [Validators.email]
-      }]
+      password: ['', Validators.required]
     });
   }
 
@@ -40,13 +42,12 @@ export class RegisterComponent implements OnInit {
     return this.userForm.get('password') as FormControl;
   }
 
-  get email(): FormControl {
-    return this.userForm.get('email') as FormControl;
-  }
-
-  onRegisterClick() {
-    this.registerService.register(this.userForm.getRawValue()).subscribe(() => {
-      this.router.navigate(['login']);
+  onLoginClick() {
+    this.loginService.login(this.userForm.getRawValue()).subscribe((userToken) => {
+      if (userToken.token != null && userToken.user != null) {
+        this.localStorageService.currentToken = userToken.token;
+        this.localStorageService.currentUser = userToken.user;
+      }
     });
     // this.onCancelClick();
   }
@@ -67,10 +68,7 @@ export class RegisterComponent implements OnInit {
         errorMessage = 'Field is required';
         return errorMessage;
       }
-      if (control.errors['email']) {
-        errorMessage = 'Incorrect email';
-        return errorMessage;
-      }
     }
   }
+
 }
