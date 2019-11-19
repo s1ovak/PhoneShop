@@ -6,7 +6,10 @@
 .toolbar-contols {
   width: 100vw;
   display: flex;
-  position: ;
   flex-direction: row-reverse;
   justify-content: space-between;
+}
+
+.button-interval{
+  margin-left: 10px;
 }

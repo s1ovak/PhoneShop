@@ -23,12 +23,17 @@ import {OverlayModule} from "@angular/cdk/overlay";
 import { LoginComponent } from './login/login.component';
 import {LoginService} from "./util/service/login.service";
 import {JwtInterceptor} from "./util/interceptors/jwt.interceptor";
+import {UserService} from "./util/service/user.service";
+import { PlpComponent } from './plp/plp.component';
+import {LoginGuardService} from "./util/service/guards/login.guard.service";
+import {AuthGuardService} from "./util/service/guards/auth.guard.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    PlpComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,9 @@ import {JwtInterceptor} from "./util/interceptors/jwt.interceptor";
   providers: [
     RegisterService,
     LoginService,
+    UserService,
+    LoginGuardService,
+    AuthGuardService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

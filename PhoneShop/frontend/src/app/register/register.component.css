@@ -17,3 +17,7 @@ form {
   display: flex;
   justify-content: center;
 }
+
+.button-interval{
+  margin-left: 10px;
+}

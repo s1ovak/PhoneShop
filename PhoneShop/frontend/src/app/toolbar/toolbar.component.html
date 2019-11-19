@@ -1,5 +1,26 @@
 <mat-toolbar color="primary">
   <div class="toolbar-controls">
+    <div >
+      <button mat-raised-button color="accent" *ngIf="isAuthenticated()" [routerLink]="'plp'">
+        Home
+      </button>
 
+      <button class="button-interval" mat-raised-button *ngIf="isAuthenticated()" [routerLink]="'plp'">
+        Search
+      </button>
+    </div>
+
+    <div class="log">
+      <button  mat-raised-button color="accent" *ngIf="!isAuthenticated()" (click)="onLoginClick()">Login</button>
+      <button class="button-interval" color="accent" mat-raised-button *ngIf="!isAuthenticated()" (click)="onSignUpClick()">
+        Sign Up
+      </button>
+
+      <button  mat-raised-button color="warn" *ngIf="isAuthenticated()" (click)="onLogoutClick()">Logout</button>
+      <button class="button-interval" mat-raised-button *ngIf="isAuthenticated()" >
+        {{getUsername()}}
+        <img src="assets/icons/cart.png" height="30" width="30" class="button-interval"/>
+      </button>
+    </div>
   </div>
 </mat-toolbar>

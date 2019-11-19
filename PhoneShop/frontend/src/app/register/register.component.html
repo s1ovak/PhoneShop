@@ -19,9 +19,9 @@
   </form>
 
   <div class="edit-user-controls">
-    <button class="mat-flat-button" mat-button color="primary" [disabled]="username.invalid || password.invalid || email.invalid" (click)="onRegisterClick()">
+    <button mat-flat-button color="primary" [disabled]="username.invalid || password.invalid || email.invalid" (click)="onRegisterClick()">
       Register
     </button>
-    <button class="mat-flat-button" mat-button color="warn" (click)=onCancelClick()>Cancel</button>
+    <button class="button-interval" mat-flat-button color="warn" (click)=onCancelClick()>Cancel</button>
   </div>
 </div>

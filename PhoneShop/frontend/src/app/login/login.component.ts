@@ -16,6 +16,7 @@ import {Token} from "../util/models/token.model";
 export class LoginComponent implements OnInit {
 
   userForm: FormGroup;
+  success: boolean = true;
 
   constructor(private fb: FormBuilder, private router: Router, private location: Location,
               private loginService: LoginService, private localStorageService: GlobalUserStorageService) {
@@ -44,12 +45,15 @@ export class LoginComponent implements OnInit {
 
   onLoginClick() {
     this.loginService.login(this.userForm.getRawValue()).subscribe((userToken) => {
-      if (userToken.token != null && userToken.user != null) {
+      if(!userToken) {
+        this.success = false;
+      } else if ( userToken.token != null && userToken.user != null) {
         this.localStorageService.currentToken = userToken.token;
         this.localStorageService.currentUser = userToken.user;
+        this.success = true;
+        this.router.navigate(['plp']);
       }
     });
-    // this.onCancelClick();
   }
 
   onCancelClick() {
