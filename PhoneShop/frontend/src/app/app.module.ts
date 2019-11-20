@@ -12,7 +12,7 @@ import {
   MatDialogModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule,
-  MatInputModule
+  MatInputModule, MatSortModule, MatTableModule
 } from "@angular/material";
 import {RegisterService} from "./util/service/register.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -27,13 +27,16 @@ import {UserService} from "./util/service/user.service";
 import { PlpComponent } from './plp/plp.component';
 import {LoginGuardService} from "./util/service/guards/login.guard.service";
 import {AuthGuardService} from "./util/service/guards/auth.guard.service";
+import {ProductService} from "./util/service/product.service";
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    PlpComponent
+    PlpComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ import {AuthGuardService} from "./util/service/guards/auth.guard.service";
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [
     RegisterService,
@@ -60,6 +65,7 @@ import {AuthGuardService} from "./util/service/guards/auth.guard.service";
     UserService,
     LoginGuardService,
     AuthGuardService,
+    ProductService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

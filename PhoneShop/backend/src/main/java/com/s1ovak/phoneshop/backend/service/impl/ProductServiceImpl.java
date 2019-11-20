@@ -83,8 +83,8 @@ public class ProductServiceImpl implements ProductService {
                         : Comparator.comparing(Product::getDescription).reversed();
             } else if ("price".equalsIgnoreCase(sort)) {
                 productComparator = "asc".equalsIgnoreCase(order)
-                        ? Comparator.comparing(Product::getDescription)
-                        : Comparator.comparing(Product::getDescription).reversed();
+                        ? Comparator.comparing(Product::getPrice)
+                        : Comparator.comparing(Product::getPrice).reversed();
             }
         }
         return productComparator;
