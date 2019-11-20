@@ -20,4 +20,7 @@ public class Product {
 
     @Column(name = "quantity")
     private Integer quantity;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 }

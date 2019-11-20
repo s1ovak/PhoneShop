@@ -13,3 +13,9 @@
 .button-interval{
   margin-left: 10px;
 }
+
+.log{
+  position: absolute;
+  right: 2%;
+  top:0.8rem;
+}
