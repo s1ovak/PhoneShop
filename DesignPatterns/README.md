@@ -1,12 +1,6 @@
-# PhoneShop
-# TRTPO project
-PhoneShop is a web application for buying and selling mobile devices. Technologies: Spring Boot, Spring Security, Hibernate, JPA, Angular, MySQL db.
+# PhoneShop design patterns
+При реализации данного проекта были использованы паттерны проектирования. Некоторые из них используются применяемыми фреймворками, некоторые реализованы собственноручно. Ниже приводится объяснение некоторых из них:
+### Singletone
+Данный паттерн очень популярен при разработке ПО, особенно в фреймворках, использующих Inversion of Control. Механизм Dependency Injection (для данного проекта это механизм в Spring Framework и Angular Framework) манипулирует бинами и выполняет их внедрение при обращении из различных классов. В данном проекте, используя scope бинов, реализован данный паттерн (все бины являются синглтонами).
+### Factory
 
-# Contents
-1. [Documentation](https://github.com/s1ovak/PhoneShop/tree/master/ProjectDocumentation) <br>
-  1.1 [Reqirements (ru)](https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/SoftwareRequirmentsSpecification%20(ru).md) <br>
-  1.2 [Reqirements (en)](https://github.com/s1ovak/PhoneShop/blob/master/ProjectDocumentation/SoftwareRequirmentsSpecification%20(en).md) <br>
-2. [UML Diagrams](https://github.com/s1ovak/PhoneShop/tree/master/Diagrams) <br>
-3. [Project code](https://github.com/s1ovak/PhoneShop/tree/master/PhoneShop) <br>
-  3.1 [Backend](https://github.com/s1ovak/PhoneShop/tree/master/PhoneShop/backend) <br>
-  3.2 [Frontend](https://github.com/s1ovak/PhoneShop/tree/master/PhoneShop/frontend) <br>
