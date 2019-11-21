@@ -13,10 +13,9 @@ import java.util.List;
 public class CartDto {
     User user;
     List<Product> products;
-    List<Integer> quantities;
+    Integer totalPrice;
 
     public CartDto() {
         products = new ArrayList<>();
-        quantities = new ArrayList<>();
     }
 }

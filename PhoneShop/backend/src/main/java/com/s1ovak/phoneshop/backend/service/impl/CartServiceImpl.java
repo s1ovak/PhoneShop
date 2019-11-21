@@ -2,9 +2,8 @@ package com.s1ovak.phoneshop.backend.service.impl;
 
 import com.s1ovak.phoneshop.backend.dto.CartDto;
 import com.s1ovak.phoneshop.backend.dto.CartItemDto;
-import com.s1ovak.phoneshop.backend.entity.Cart;
-import com.s1ovak.phoneshop.backend.entity.Product;
-import com.s1ovak.phoneshop.backend.entity.User;
+import com.s1ovak.phoneshop.backend.dto.OrderDto;
+import com.s1ovak.phoneshop.backend.entity.*;
 import com.s1ovak.phoneshop.backend.repository.CartRepository;
 import com.s1ovak.phoneshop.backend.repository.ProductRepository;
 import com.s1ovak.phoneshop.backend.service.CartService;
@@ -35,7 +34,7 @@ public class CartServiceImpl implements CartService {
         Product product = productService.getProductById(cartItem.getProductId());
 
         Cart cart = cartRepository.getByUserAndProduct(user, product);
-        if(cart == null) {
+        if (cart == null) {
             cartRepository.save(new Cart(user, product, cartItem.getQuantity()));
         } else {
             cart.setCartQuantity(cart.getCartQuantity() + cartItem.getQuantity());
@@ -50,13 +49,17 @@ public class CartServiceImpl implements CartService {
 
         List<Cart> carts = cartRepository.findAllByUser(user);
 
-        carts.forEach(cart -> {
-            cartDto.getProducts().add(cart.getProduct());
-            cartDto.getQuantities().add(cart.getCartQuantity());
-        });
+        Integer totalPrice = 0;
 
+        for (Cart cart : carts) {
+            Product product = cart.getProduct();
+            product.setQuantity(cart.getCartQuantity());
+            cartDto.getProducts().add(product);
+            totalPrice += cart.getProduct().getPrice() * cart.getCartQuantity();
+        }
+
+        cartDto.setTotalPrice(totalPrice);
         cartDto.setUser(user);
-
         return cartDto;
     }
 
@@ -64,8 +67,34 @@ public class CartServiceImpl implements CartService {
     @Transactional
     public void deleteCartItem(Integer userId, Integer productId) {
         User user = userService.getUserById(userId).get();
-        Product product  = productService.getProductById(productId);
+        Product product = productService.getProductById(productId);
 
         cartRepository.deleteByProductAndUser(product, user);
+    }
+
+    @Override
+    @Transactional
+    public void placeOrder(OrderDto orderDto) {
+        for(Product product: orderDto.getCart().getProducts()) {
+            cartRepository.deleteByProductAndUser(product, orderDto.getCart().getUser());
+        }
+
+
+
+        /*Order order = new Order();
+
+        order.setTotalPrice(orderDto.getCart().getTotalPrice());
+        order.setFirstName(orderDto.getFirstName());
+        order.setLastName(orderDto.getLastName());
+        order.setPhoneNumber(orderDto.getPhoneNumber());
+        order.setAddress(orderDto.getAddress());
+
+        for (int i = 0; i < orderDto.getCart().getProducts().size(); i++) {
+            order.getCartItems().add(new OrderCart(
+                    orderDto.getCart().getUser(),
+                    orderDto.getCart().getProducts().get(i);
+                    orderDto.getCart().getProducts().get(i).getQuantity();
+            ));
+        }*/
     }
 }

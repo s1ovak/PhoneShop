@@ -31,7 +31,7 @@ import {ProductService} from "./util/service/product.service";
 import { ProductComponent } from './product/product.component';
 import { LastViewedComponent } from './last-viewed/last-viewed.component';
 import { CartComponent } from './cart/cart.component';
-import {CartService} from "./util/service/guards/cart.service";
+import {CartService} from "./util/service/cart.service";
 
 @NgModule({
   declarations: [

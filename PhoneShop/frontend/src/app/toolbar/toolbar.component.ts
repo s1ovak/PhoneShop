@@ -30,6 +30,10 @@ export class ToolbarComponent implements OnInit {
     this.router.navigate(['plp']);
   }
 
+  onCartClick() {
+    this.router.navigate(['cart']);
+  }
+
   isAuthenticated(): Boolean {
     if (this.localStorageService.currentUser != null && this.localStorageService.currentToken != null) {
       return true;

@@ -2,6 +2,7 @@ package com.s1ovak.phoneshop.backend.controller;
 
 import com.s1ovak.phoneshop.backend.dto.CartDto;
 import com.s1ovak.phoneshop.backend.dto.CartItemDto;
+import com.s1ovak.phoneshop.backend.dto.OrderDto;
 import com.s1ovak.phoneshop.backend.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,5 +32,10 @@ public class CartController {
             @RequestParam(name = "userId") Integer userId,
             @RequestParam(name = "productId") Integer productId) {
         cartService.deleteCartItem(userId, productId);
+    }
+
+    @PostMapping(value = "/order")
+    public void placeOrder(@RequestBody OrderDto orderDto) {
+        cartService.placeOrder(orderDto);
     }
 }

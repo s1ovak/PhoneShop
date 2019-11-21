@@ -13,7 +13,7 @@
       </button>
 
       <button  mat-raised-button color="warn" *ngIf="isAuthenticated()" (click)="onLogoutClick()">Logout</button>
-      <button class="button-interval" mat-raised-button *ngIf="isAuthenticated()" >
+      <button class="button-interval" mat-raised-button *ngIf="isAuthenticated()" (click)="onCartClick()">
         {{getUsername()}}
         <img src="assets/icons/cart.png" height="30" width="30" class="button-interval"/>
       </button>
