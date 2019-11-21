@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Service(value = "userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserDetailsServiceImpl(UserService userService) {
@@ -30,10 +30,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("Invalid username or password");
         }
         return new org.springframework.security.core.userdetails.User(
-                user.get().getUsername(), user.get().getPassword(), getAuthority(user.get()));
+                user.get().getUsername(), user.get().getPassword(), getAuthority());
     }
 
-    private Set getAuthority(User user) {
+    private Set getAuthority() {
         Set<GrantedAuthority> authorities = new HashSet<>();
 
         authorities.add(new SimpleGrantedAuthority("USER"));

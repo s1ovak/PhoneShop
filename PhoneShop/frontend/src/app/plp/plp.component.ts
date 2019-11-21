@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {Product} from "../util/models/product.model";
 import {MatTableDataSource, Sort} from "@angular/material";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {GlobalUserStorageService} from "../util/service/global-storage.service";
 
 @Component({
   selector: 'app-plp',
@@ -23,7 +24,10 @@ export class PlpComponent implements OnInit {
 
   private displayedColumns: string[] = ['imageUrl', 'description', 'price', 'quantity'];
 
-  constructor(private productService: ProductService, private router: Router, private fb: FormBuilder) {
+  constructor(private productService: ProductService,
+              private router: Router,
+              private fb: FormBuilder,
+              private localStorage: GlobalUserStorageService) {
   }
 
   ngOnInit() {
@@ -34,7 +38,7 @@ export class PlpComponent implements OnInit {
     this.dataSource = new MatTableDataSource();
     this.currentOrder = null;
     this.currentSort = null;
-    this.currentOrder= null;
+    this.currentOrder = null;
     this.productService.getAllProducts().subscribe(response => {
       this.products = response;
       this.dataSource = response;
@@ -45,7 +49,7 @@ export class PlpComponent implements OnInit {
     this.currentSort = sort.active;
     this.currentOrder = sort.direction;
 
-    this.productService.getAllProducts(this.currentQuery, this.currentSort, this.currentOrder).subscribe(response=> {
+    this.productService.getAllProducts(this.currentQuery, this.currentSort, this.currentOrder).subscribe(response => {
       this.products = response;
       this.dataSource = response;
     })
@@ -54,10 +58,23 @@ export class PlpComponent implements OnInit {
   onSearchClick() {
     this.currentQuery = this.queryForm.get('query').value;
 
-    this.productService.getAllProducts(this.currentQuery, this.currentSort, this.currentOrder).subscribe(response=> {
+    this.productService.getAllProducts(this.currentQuery, this.currentSort, this.currentOrder).subscribe(response => {
       this.products = response;
       this.dataSource = response;
     })
+  }
+
+  getProductHref(id: string): void {
+    const lastViewedProducts = this.localStorage.lastViewedProducts;
+    if (!lastViewedProducts) {
+      this.localStorage.lastViewedProducts = [id];
+    } else if (lastViewedProducts.some(productId => productId === id)) {
+      return;
+    } else if (lastViewedProducts && lastViewedProducts.length < 3) {
+      this.localStorage.lastViewedProducts = lastViewedProducts.concat([id]);
+    } else {
+      this.localStorage.lastViewedProducts = lastViewedProducts.slice(1, 3).concat([id]);
+    }
   }
 
 

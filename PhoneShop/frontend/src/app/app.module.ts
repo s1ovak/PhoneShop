@@ -8,11 +8,11 @@ import {ToolbarModule} from "./toolbar/toolbar.module";
 import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {
-  MatAutocompleteModule, MatButtonModule,
+  MatAutocompleteModule, MatButtonModule, MatCardModule,
   MatDialogModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule,
-  MatInputModule, MatSortModule, MatTableModule
+  MatInputModule, MatSelectModule, MatSortModule, MatTableModule
 } from "@angular/material";
 import {RegisterService} from "./util/service/register.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -29,6 +29,9 @@ import {LoginGuardService} from "./util/service/guards/login.guard.service";
 import {AuthGuardService} from "./util/service/guards/auth.guard.service";
 import {ProductService} from "./util/service/product.service";
 import { ProductComponent } from './product/product.component';
+import { LastViewedComponent } from './last-viewed/last-viewed.component';
+import { CartComponent } from './cart/cart.component';
+import {CartService} from "./util/service/guards/cart.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { ProductComponent } from './product/product.component';
     RegisterComponent,
     LoginComponent,
     PlpComponent,
-    ProductComponent
+    ProductComponent,
+    LastViewedComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,9 @@ import { ProductComponent } from './product/product.component';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatCardModule,
+    MatSelectModule
   ],
   providers: [
     RegisterService,
@@ -66,6 +73,7 @@ import { ProductComponent } from './product/product.component';
     LoginGuardService,
     AuthGuardService,
     ProductService,
+    CartService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

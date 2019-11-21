@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    ProductService productService;
+    private final ProductService productService;
 
     @Autowired
     public ProductController(ProductService productService) {
@@ -29,5 +29,10 @@ public class ProductController {
     @GetMapping(value = "/{id}")
     public Product getProductById(@PathVariable(name = "id") Integer id) {
         return productService.getProductById(id);
+    }
+
+    @PostMapping(value = "/last-viewed")
+    public List<Product> getLastViewed(@RequestBody List<Integer> ids) {
+        return productService.getLastViewed(ids);
     }
 }

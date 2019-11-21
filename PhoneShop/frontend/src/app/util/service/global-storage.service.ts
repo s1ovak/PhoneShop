@@ -10,6 +10,7 @@ import {Token} from "../models/token.model";
 export class GlobalUserStorageService {
   private USER_KEY = 'currentUser';
   private TOKEN_KEY = 'currentToken';
+  private LAST_VIEWED_KEY = 'lastViewed';
 
   set currentUser(user: User) {
     localStorage.setItem(this.USER_KEY, JSON.stringify(user));
@@ -25,6 +26,14 @@ export class GlobalUserStorageService {
 
   get currentToken() {
     return JSON.parse(localStorage.getItem(this.TOKEN_KEY));
+  }
+
+  set lastViewedProducts(ids: string[]) {
+    localStorage.setItem(this.LAST_VIEWED_KEY, JSON.stringify(ids));
+  }
+
+  get lastViewedProducts() {
+    return JSON.parse(localStorage.getItem(this.LAST_VIEWED_KEY));
   }
 
   constructor() {

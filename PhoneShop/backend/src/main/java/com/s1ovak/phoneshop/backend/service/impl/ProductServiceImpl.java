@@ -12,13 +12,22 @@ import java.util.stream.Collectors;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Autowired
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
+
+    @Override
+    public List<Product> getLastViewed(List<Integer> ids) {
+        List<Product> products = new ArrayList<>();
+        ids.forEach(id -> {
+            products.add(productRepository.findProductById(id));
+        });
+        return products;
+    }
 
     @Override
     public Product getProductById(Integer id) {

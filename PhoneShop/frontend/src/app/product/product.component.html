@@ -1,1 +1,28 @@
-<p>product works!</p>
+<div class="product" *ngIf="product">
+  <div class="product_card">
+    <mat-card>
+      <img mat-card-image src="{{product.imageUrl}}">
+      <div class="product_card_description">
+        <mat-card-title>{{product.description}}</mat-card-title>
+        <mat-card-title class="product_card_description_price">{{product.price}}$</mat-card-title>
+        <div class="product_card_description_quantity">
+          <mat-form-field>
+            <mat-label>Quantity</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option value="{{i}}" *ngFor="let i of numbers">{{i}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="product_add-btn">
+    <button mat-flat-button color="primary" (click)="addToCart()">
+      Add to cart
+    </button>
+  </div>
+
+  <footer class="product-footer">
+    <app-last-viewed></app-last-viewed>
+  </footer>
+</div>

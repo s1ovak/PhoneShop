@@ -1,0 +1,12 @@
+<div class="last_viewed" *ngIf="products">
+  <mat-card-title>Last viewed:</mat-card-title>
+  <div class="last_viewed_cards">
+    <mat-card *ngFor="let product of products">
+      <a href="/product?id={{product.id}}">
+        <img mat-card-image src="{{product.imageUrl}}">
+      </a>
+      <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+      <mat-card-subtitle>{{product.price}}$</mat-card-subtitle>
+    </mat-card>
+  </div>
+</div>

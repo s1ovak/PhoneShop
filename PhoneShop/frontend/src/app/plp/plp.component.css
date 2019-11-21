@@ -40,5 +40,39 @@
 }
 
 .mat-table-sticky {
-  border-right: 1px solid #e0e0e0;
+  border-right: 2px solid lightgray;
+  text-align: center;
+}
+
+.mat-table-sticky:last-child {
+  border-right: none;
+}
+
+.plp {
+  position: relative;
+  height: 93%;
+  overflow: auto;
+}
+
+.mat-table {
+  width: 60%;
+}
+
+.mat-header-cell {
+  padding-left: 8%;
+  padding-right: 5%;
+}
+.mat-header-cell:last-child{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.plp-body{
+  padding-bottom: 50px;
+}
+.plp-footer {
+
+}
+
+.plp_table {
+  margin-left:3%;
 }

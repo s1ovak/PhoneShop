@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/cart")
 public class CartController {
-    private CartService cartService;
+    private final CartService cartService;
 
     @Autowired
     public CartController(CartService cartService) {
@@ -29,8 +29,7 @@ public class CartController {
     @PostMapping(value = "/delete")
     public void deleteCartItem(
             @RequestParam(name = "userId") Integer userId,
-            @RequestParam(name = "productId") Integer productId
-    ) {
+            @RequestParam(name = "productId") Integer productId) {
         cartService.deleteCartItem(userId, productId);
     }
 }

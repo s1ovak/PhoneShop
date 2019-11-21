@@ -19,10 +19,10 @@ import java.util.Optional;
 
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
-    private UserDetailsService userDetailsService;
-    private AuthenticationManager authenticationManager;
-    private JwtTokenUtil jwtTokenUtil;
-    private UserService userService;
+    private final UserDetailsService userDetailsService;
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenUtil jwtTokenUtil;
+    private final UserService userService;
 
     @Autowired
     public AuthenticationServiceImpl(UserDetailsService userDetailsService, AuthenticationManager authenticationManager,
