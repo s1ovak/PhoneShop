@@ -3,4 +3,6 @@
 ### Singletone
 Данный паттерн очень популярен при разработке ПО, особенно в фреймворках, использующих Inversion of Control. Механизм Dependency Injection (для данного проекта это механизм в Spring Framework и Angular Framework) манипулирует бинами и выполняет их внедрение при обращении из различных классов. В данном проекте, используя scope бинов, реализован данный паттерн (все бины являются синглтонами).
 ### Factory
-
+Паттерн Factory применяется при инициализации бинов приложения. Для данного проекта при инициализации бинов используется класс BeanFactory. При инициализации SpringContext вызывается метод getBean, который создает бин в соответствии с xml конфигурацией (для данного проекта вместо xml используются java аннотации).
+![BeanFactory](https://raw.githubusercontent.com/s1ovak/PhoneShop/master/DesignPatterns/Screens/springFactory.png)
+### MVC
