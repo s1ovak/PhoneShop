@@ -10,4 +10,6 @@ PhoneShop is a web application for buying and selling mobile devices. Technologi
 3. [Project code](https://github.com/s1ovak/PhoneShop/tree/master/PhoneShop) <br>
   3.1 [Backend](https://github.com/s1ovak/PhoneShop/tree/master/PhoneShop/backend) <br>
   3.2 [Frontend](https://github.com/s1ovak/PhoneShop/tree/master/PhoneShop/frontend) <br>
-4. [Design Pattenrs](https://github.com/s1ovak/PhoneShop/tree/master/DesignPatterns) <br>
+4. [Design Patterns](https://github.com/s1ovak/PhoneShop/tree/master/DesignPatterns) <br>
+5. [Test Plan](https://github.com/s1ovak/PhoneShop/blob/master/Testing/TestPlan.md) <br>
+6. [Test Results](https://github.com/s1ovak/PhoneShop/blob/master/Testing/TestResults.md) <br>
