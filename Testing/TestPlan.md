@@ -15,7 +15,7 @@
 
 ## Введение
 
-Данный документ описывает плант тестирования приложения ["BSUIR schedule for Windows"](https://github.com/AnjeyNov/TRTPO-Project).
+Данный документ описывает плант тестирования приложения ["BSUIR schedule for Windows"](https://github.com/AnjeyNov/TRTPO-Project). Документ предназначен для людей, выполняющих тестирование данного проекта (тестировщиков). Цель тестирования - проверка соответствия реального поведения программы проекта и ее ожидаемого поведения. Ожидаемые результаты формируются на основе [требований](https://github.com/AnjeyNov/TRTPO-Project/blob/master/Documents/Requirements/Software%20Requirements%20Specification.md).
 
 <a name="items"/>
 
