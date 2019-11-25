@@ -15,6 +15,8 @@
 
 ## Введение
 
+Данный документ описывает плант тестирования приложения ["BSUIR schedule for Windows"](https://github.com/AnjeyNov/TRTPO-Project).
+
 <a name="items"/>
 
 ## Объект тестирования
