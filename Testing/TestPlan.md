@@ -12,25 +12,33 @@
 8 [Выводы](#conclusion)
 
 <a name="introduction"/>
+
 ## Введение
 
 <a name="items"/>
+
 ## Объект тестирования
 
 <a name="quality"/>
+
 ## Атрибуты качества
 
 <a name="risk"/>
+
 ## Риски
 
 <a name="features"/>
+
 ## Аспекты тестирования
 
 <a name="approach"/>
+
 ## Подходы к тестированию
 
 <a name="pass"/>
+
 ## Представление результатов
 
 <a name="conclusion"/>
+
 ## Выводы
